@@ -1,7 +1,7 @@
 # A trait to make Eloquent models translatable
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/laravel-translatable.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-translatable)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+[![MIT Licensed](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Build Status](https://img.shields.io/travis/spatie/laravel-translatable/master.svg?style=flat-square)](https://travis-ci.org/spatie/laravel-translatable)
 [![Quality Score](https://img.shields.io/scrutinizer/g/spatie/laravel-translatable.svg?style=flat-square)](https://scrutinizer-ci.com/g/spatie/laravel-translatable)
 [![StyleCI](https://styleci.io/repos/55690447/shield?branch=master)](https://styleci.io/repos/55690447)
@@ -34,9 +34,7 @@ You can install the package via composer:
 composer require spatie/laravel-translatable
 ```
 
-The package will automatically register itself.
-
-If you want to change add fallback_locale, you must publish the config file:
+If you want to have another fallback_locale then the app fallback locale (see `config/app.php`), you could publish the config file:
 ```
 php artisan vendor:publish --provider="Spatie\Translatable\TranslatableServiceProvider"
 ```
@@ -48,7 +46,6 @@ return [
   'unescaped_unicode' => false,
 ];
 ```
-
 
 ## Making a model translatable
 
@@ -192,7 +189,7 @@ You can immediately set translations when creating a model. Here's an example:
 ```php
 NewsItem::create([
    'name' => [
-      'en' => 'Name in English'
+      'en' => 'Name in English',
       'nl' => 'Naam in het Nederlands'
    ],
 ]);
